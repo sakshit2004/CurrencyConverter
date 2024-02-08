@@ -33,14 +33,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        Button buttonConvert = findViewById(R.id.convertButton);
+        setContentView(binding.getRoot());
 
-        buttonConvert.setOnClickListener( view ->  {
-            convertCurrency(view);
-        } );
+        binding.convertButton.setOnClickListener(this::convertCurrency);
     }
+
 
     public void convertCurrency(View view) {
 
