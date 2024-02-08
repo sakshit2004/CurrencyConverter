@@ -3,5 +3,5 @@
     <string name="enterdollars">Enter dollars</string>
     <string name="result">Result</string>
     <string name="convertbutton"> Convert</string>
-    <string name="resulteuros"> 951$.2f Euros</string>
+    <string name="resulteuros">%1$.2f Euros</string>
     </resources>
