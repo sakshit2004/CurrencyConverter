@@ -20,14 +20,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i("MainActivity", "Enter onCreate()");
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Button buttonConvert = binding.convertButton;
-
-        buttonConvert.setOnClickListener(view -> {
-            convertCurrency(view);
-        });
+        // Use ViewBinding for the button click listener
+        binding.convertButton.setOnClickListener(this::convertCurrency);
 
         Log.i("MainActivity", "Exit onCreate()");
     }
