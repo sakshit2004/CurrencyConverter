@@ -2,11 +2,14 @@ package com.college.converter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.college.converter.databinding.ActivityMainBinding;
 
 /*
     TODOs:
@@ -23,12 +26,15 @@ import android.widget.TextView;
 */
 
 public class MainActivity extends AppCompatActivity {
+    ActivityMainBinding binding;
+
+
     static private final Float CONVERSION_RATE = 0.80F;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         Button buttonConvert = findViewById(R.id.convertButton);
 
         buttonConvert.setOnClickListener( view ->  {
@@ -50,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             Float resultFloat = inputAmountDecimal * CONVERSION_RATE;
 
             resultView.setText( resultFloat + " Euros" );
+
         }
     }
 }
